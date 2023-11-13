@@ -1,0 +1,102 @@
+<section id="explore" class="container">
+    <div class="section_title_container">
+        <div class="section_title">
+            <h3>EXPLORE BY</h3>
+        </div>
+        <a href="#" class="section_link">
+            <span>VIEW ALL</span>
+            <div class="section_arrow_icon">
+                <img src="/svgs/circle-arrow.svg" alt="" />
+            </div>
+        </a>
+    </div>
+    <div class="explore_card_container">
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Nutrition.png?w=451&h=336"
+                    alt="Nutrition icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Nutrition</h3>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Sleep.png?w=451&h=336"
+                    alt="Sleep icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Sleep</h3>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Mental_Health.png?w=451&h=336"
+                    alt="Mental Health icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Mental Health</h3>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Fitness.png?w=451&h=336"
+                    alt="Fitness icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Fitness</h3>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Product_Reviews.png?w=451&h=336"
+                    alt="Product Reviews icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Product Reviews</h3>
+            </div>
+        </a>
+        <a href="#" class="card">
+            <div class="card_img__rounded">
+                <img
+                    src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2022/02/Explore_By-Parenthood.png?w=451&h=336"
+                    alt="Parenthood icon"
+                />
+            </div>
+            <div class="card_title">
+                <h3>Parenthood</h3>
+            </div>
+        </a>
+    </div>
+</section>
+
+<style>
+    .explore_card_container {
+	padding-top: 3.2rem;
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 4rem;
+	row-gap: 3.2rem;
+}
+@media screen and (min-width: 768px){
+    .explore_card_container{
+        padding-top: 2.8rem;
+            grid-template-columns: repeat(5,minmax(0,1fr));
+            column-gap: 5rem;
+    }
+    .explore_card_container > a:last-child{
+        display: none;
+    }
+}
+</style>

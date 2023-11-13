@@ -1,0 +1,66 @@
+:root {
+	--text-colour: #231f20;
+	--white: #ffffff;
+}
+
+* {
+	outline: none;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	font-size: calc(100vw / 425 * 10);
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	flex-direction: column;
+	height: 100%;
+}
+html::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	line-height: 1;
+	flex-grow: 1;
+	margin: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	font-family: "Metropolis", sans-serif;
+	color: #231f20;
+	background-color: #f7f7f7;
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	justify-content: stretch;
+	flex-direction: column;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+	html {
+		font-size: calc(100vw / 768 * 10);
+	}
+}
+
+@media screen and (min-width: 990px) {
+	html {
+		font-size: calc(100vw / 1100 * 10);
+	}
+}
+@media screen and (min-width: 1101px) {
+	html {
+		font-size: 10px;
+	}
+}

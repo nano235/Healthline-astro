@@ -1,0 +1,102 @@
+<section id="top-reads" class="container">
+    <div class="section_title_container">
+        <div class="section_title">
+            <h3>MORE TOP READS</h3>
+        </div>
+    </div>
+    <div class="top_reads_card__container">
+        <div class="top_reads_card__list">
+            <a href="#" class="card">
+                <div class="card_img">
+                    <img
+                        src="https://media.post.rvohealth.io/wp-content/uploads/2021/02/man-listening-to-friend-in-cafe-732x549-thumbnail.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="card_title">
+                    <h4>
+                        What Are the Signs and Symptoms of Depression in
+                        Men?
+                    </h4>
+                </div>
+            </a>
+            <a href="#" class="card">
+                <div class="card_img">
+                    <img
+                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/female-making-food-in-kitchen-732-549-feature-thumb.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="card_title">
+                    <h4>
+                        How Menopause Encouraged Me to Give Up Dieting
+                    </h4>
+                </div>
+            </a>
+            <a href="#" class="card">
+                <div class="card_img">
+                    <img
+                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/3140612-What-Tea-Should-You-Drink-to-Lower-Blood-Pressure-732x549-thumbnail.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="card_title">
+                    <h4>
+                        What Tea Should You Drink to Lower Blood Pressure?
+                    </h4>
+                </div>
+            </a>
+            <a href="#" class="card">
+                <div class="card_img">
+                    <img
+                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/Bald-man-with-eye-patches-drinking-coffee-thumbnail.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="card_title">
+                    <h4>Understanding Cancer Dizziness and Fatigue</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .top_reads_card__container {
+	margin-left: calc((100vw - 100%) / -2);
+	margin-right: calc((100vw - 100%) / -2);
+	overflow: hidden;
+}
+
+.top_reads_card__list {
+	-webkit-scroll-snap-type: x mandatory;
+	-moz-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	-webkit-scroll-behavior: smooth;
+	-moz-scroll-behavior: smooth;
+	scroll-behavior: smooth;
+	margin-top: 0;
+	margin-left: 2rem;
+    padding: 2.1rem 2rem 2rem 0;
+	overflow: hidden;
+	overflow-x: auto;
+	list-style: none;
+	margin-bottom: -1rem;
+	display: grid;
+	grid-template-columns: 20rem 20rem 20rem 20rem;
+	column-gap: 2.4rem;
+}
+@media screen and (min-width: 768px){
+    .top_reads_card__container{
+        margin: 0;
+        overflow: initial;
+    }
+    .top_reads_card__list{
+        padding: 0;
+        padding-top: 2.8rem;
+        margin-left: 0;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            column-gap: 2.4rem;
+    }
+}
+</style>
