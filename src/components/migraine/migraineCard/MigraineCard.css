@@ -1,0 +1,58 @@
+.migraine_card {
+	width: 100%;
+	margin-bottom: 3rem;
+	display: grid;
+	grid-template-columns: 26% 1fr;
+	gap: 2rem;
+}
+.image {
+	width: 100%;
+}
+.migraine_card > .text > a {
+	text-decoration: none;
+	font-family: "Metropolis-700", sans-serif;
+	font-weight: 700;
+	color: #231f20;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+}
+.migraine_card > .text > p {
+	margin-top: 2rem;
+	display: none;
+}
+.migraine_card > .text > p > a {
+	font-family: "Metropolis", sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin-bottom: 0;
+	color: #231f20;
+}
+@media screen and (min-width: 990px) {
+	.migraine_card {
+		border: none;
+	}
+	.migraine_card[data-type="large"] {
+		grid-template-columns: 20rem 1fr;
+	}
+	.migraine_card {
+		margin-bottom: 4rem;
+		padding: 0 1rem 2rem;
+	}
+	.migraine_card .text > a {
+		font-size: 2rem;
+		line-height: 2.6rem;
+	}
+	.migraine_card[data-type="large"] .text > a {
+		font-size: 3rem;
+		line-height: 3.6rem;
+	}
+	.migraine_card .text > p {
+		margin-top: 1rem;
+		display: block;
+	}
+	.migraine_card .text > p > a {
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+	}
+}

@@ -1,0 +1,32 @@
+---
+import './FeaturedCard.css'
+import { onCleanup, onMount } from 'solid-js';
+interface Props {
+	title?: string;
+	body?: string;
+	href?: string;
+}
+
+const { href, title = 'Relief from Chronic Migraine: Current and Emerging Treatments', body ="You can answer these questions to determine whether it may be advisable to talk with your doctor about migraine's effect on your mental well-being." } = Astro.props;
+---
+
+
+<div class="featured_card">
+    <figure class="css-ulvpcl">
+        <a class="css-yvmi2y" href="https://www.healthline.com/health/migraine/chronic-migraine-mental-wellness-check">
+            <div class="image">
+                            <img src="https://media.post.rvohealth.io/wp-content/uploads/2023/05/female-migraine-on-bed-732-549-feature-thumb-732x549.jpg" alt="" class="css-10vopkp">
+            </div>
+        </a>
+    </figure>
+    <div class="text">
+        <a href="https://www.healthline.com/health/migraine/chronic-migraine-mental-wellness-check">
+            {title}
+        </a>
+        <p>
+            <a href="https://www.healthline.com/health/migraine/chronic-migraine-mental-wellness-check">
+                {body.slice(0,94)}...
+            </a>
+        </p>
+    </div>
+</div>

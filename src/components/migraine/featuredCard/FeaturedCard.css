@@ -1,0 +1,64 @@
+.featured_card {
+	width: 100%;
+	border-bottom: 0.8rem solid #f7f7f7;
+	width: calc(100% + 2rem);
+	margin-left: -1rem;
+	padding: 0 1rem 4rem;
+	margin-bottom: 3rem;
+}
+.image {
+	width: 100%;
+}
+.text > a {
+	text-decoration: none;
+	font-family: "Metropolis-700", sans-serif;
+	font-weight: 700;
+	color: #231f20;
+	font-size: 2.4rem;
+	line-height: 3.4rem;
+}
+.text > p {
+	margin-top: 2rem;
+}
+.text > p > a {
+	font-family: "Metropolis", sans-serif;
+	font-weight: 400;
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin-bottom: 0;
+	color: #231f20;
+}
+@media screen and (min-width: 990px) {
+	.featured_card {
+		border: none;
+	}
+	.featured_card:first-child {
+		max-width: 100%;
+		margin-top: 0;
+		margin-bottom: 3rem;
+		grid-row: 1 / span 5;
+		grid-column: 1;
+	}
+	.featured_card:not(:first-child) {
+		margin-bottom: 4rem;
+		/* display: flex; */
+		padding: 0 1rem 2rem;
+		display: grid;
+		grid-template-columns: 18.5rem 1fr;
+	}
+	.featured_card:not(:first-child) figure {
+		margin-right: 2rem;
+		/* width: 18.5rem; */
+	}
+	.featured_card:not(:first-child) .text > a {
+		font-size: 2rem;
+		line-height: 2.6rem;
+	}
+	.featured_card:not(:first-child) .text > p {
+		margin-top: 1rem;
+	}
+	.featured_card:not(:first-child) .text > p > a {
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+	}
+}

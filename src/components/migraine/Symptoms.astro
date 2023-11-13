@@ -1,0 +1,33 @@
+---
+import MigraineCard from './migraineCard/MigraineCard.astro'
+---
+
+<section class="container">
+    <div class="section_title_container">
+        <div class="section_title">
+            <h3>MIGRAINE SYMPTOMS</h3>
+        </div>
+    </div>
+    <div class="symptoms_row">
+        {[1,2,3,4,5,6,7,8].map((item) => (
+            <MigraineCard />
+        ))}
+      </div>
+</section>
+
+<style>
+    .symptoms_row{
+    margin-top: 4rem;
+        }
+    @media screen and (min-width: 990px){
+        .symptoms_row{
+            padding: 0;
+            display: grid;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(2,calc(50% - 3rem));
+    grid-column-gap: 6rem;
+    margin-top: 4rem;
+        }
+    }
+</style>

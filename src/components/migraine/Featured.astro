@@ -1,0 +1,33 @@
+---
+import FeaturedCard from './featuredCard/FeaturedCard.astro'
+---
+
+<section class="container">
+    <div class="section_title_container">
+        <div class="section_title">
+            <h3>FEATURED</h3>
+        </div>
+    </div>
+    <div class="featured_row">
+        {[1,2,3,4].map((item) => (
+            <FeaturedCard />
+        ))}
+      </div>
+</section>
+
+<style>
+    .featured_row{
+    margin-top: 4rem;
+        }
+    @media screen and (min-width: 990px){
+        .featured_row{
+            padding: 0;
+            display: grid;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(2,calc(50% - 3rem));
+    grid-column-gap: 6rem;
+    margin-top: 4rem;
+        }
+    }
+</style>

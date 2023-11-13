@@ -1,0 +1,55 @@
+---
+// Import styles or any other dependencies here
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+<!-- <script setup lang="ts">
+    export const props = defineProps<{
+      title: string;
+    }>();
+  
+    let isOpen = ref(false);
+  
+    const toggleAccordion = () => {
+      isOpen.value = !isOpen.value;
+    };
+  </script> -->
+  
+  <template>
+    <div class="accordion">
+      <button @click="toggleAccordion">
+        <span>{title }</span>
+        <!-- <span>{{ isOpen ? '[-]' : '[+]' }}</span> -->
+      </button>
+  
+      <div v-if="isOpen" class="content">
+        <slot />
+      </div>
+    </div>
+  </template>
+  
+  <style scoped>
+    .accordion {
+      margin-bottom: 1rem;
+    }
+  
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+  
+    .content {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+  </style>
+  
