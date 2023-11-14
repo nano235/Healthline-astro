@@ -1,0 +1,25 @@
+---
+import MattrassesDetail from '../../components/mattrasses/mattrassesDetails/MattrassesDetails.astro'
+import MattrassesCardList from '../../components/mattrasses/mattrassesCardList/MattrassesCardList.astro'
+---
+
+<div class="center">
+    <div class="flex flex_space_between container">
+        <div class="content">
+    
+            <MattrassesDetail />
+            <MattrassesCardList />
+        </div>
+    </div>
+</div>
+
+<style>
+    .content{
+        width: 100%;
+    }
+    @media (min-width: 990px) {
+        .content{
+        width: calc(100% - 35rem);
+    max-width: 75rem;}
+    }
+</style>

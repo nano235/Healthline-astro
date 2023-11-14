@@ -8,8 +8,40 @@ interface Props {
     type?: 'small' | 'large'
 }
 
+let screenSize
 const { href, type = 'small', title = 'Why You Puke (or Want to Puke) During a Migraine', body ="Nausea is one of the most common symptoms of migraine. Learn more about why you may feel…" } = Astro.props;
 ---
+
+
+
+<script is:inline>
+	
+// screenSize = getScreenSize();
+
+// // Function to get the current screen size
+// function getScreenSize() {
+//   return {
+//     width: window.innerWidth,
+//     height: window.innerHeight,
+//   };
+// }
+
+// // Function to handle screen size changes
+// function handleResize() {
+//   screenSize = getScreenSize();
+// }
+
+// // Add event listener on mount
+// onMount(() => {
+//   window.addEventListener('resize', handleResize);
+
+//   // Cleanup event listener on component unmount
+//   onCleanup(() => {
+//     window.removeEventListener('resize', handleResize);
+//   });
+// });
+// console.log( 'hello');
+</script>
 <div class="migraine_card" data-type={type}>
     <figure class="css-ulvpcl">
         <a class="css-yvmi2y" href="https://www.healthline.com/health/migraine/chronic-migraine-mental-wellness-check">

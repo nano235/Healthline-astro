@@ -1,0 +1,14 @@
+---
+import './MattrassesCardList.css'
+import Title from '../../shared/title/Title.astro'
+import MattrassesCard from './MattrassesCard.astro';
+---
+
+<section>
+<Title title="Healthline’s picks of the best mattresses for back and neck pain" />
+{
+    [1,2,3,4,5,6,7,8,9,10].map(()=>(
+        <MattrassesCard />
+    ))
+}
+</section>

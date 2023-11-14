@@ -1,0 +1,13 @@
+.mattrass_card {
+	width: 100%;
+	margin-top: 1.5rem;
+	border: 0.2rem solid #dcdbdb;
+	padding: 2rem 2rem 0 2rem;
+	border-radius: 1rem;
+}
+.mattrass_card_accordion {
+	border-top: 0.1rem solid #dcdbdb;
+}
+.mattrass_card_accordion > .accordion_header {
+	padding: 1.4rem 0;
+}

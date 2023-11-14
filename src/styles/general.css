@@ -3,7 +3,7 @@
 	max-width: 1440px;
 }
 main {
-	padding: 4rem 1rem;
+	padding: 4rem 2rem;
 	background-color: #f7f7f7;
 }
 img {
@@ -98,6 +98,11 @@ section {
 	.card_title h4 {
 		font-size: 1.4rem;
 		line-height: 2rem;
+	}
+}
+@media screen and (min-width: 990px) {
+	main {
+		padding: 9rem 4.5rem;
 	}
 }
 @media screen and (min-width: 1101px) {

@@ -1,0 +1,22 @@
+---
+interface TopRead {
+	href?: string;
+	title?: string;
+	imgSrc?: string;
+}
+const { href, title, imgSrc} = Astro.props;
+---
+
+<a href={href} class="card">
+    <div class="card_img">
+        <img
+            src={imgSrc}
+            alt={title}
+        />
+    </div>
+    <div class="card_title">
+        <h4>
+            {title}
+        </h4>
+    </div>
+</a>

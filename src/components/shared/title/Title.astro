@@ -1,0 +1,43 @@
+---
+// Import styles or any other dependencies here
+interface Props {
+	title: string;
+    type?: 'large' | 'medium' | 'small';
+}
+
+const { title, type='medium' } = Astro.props;
+---
+  
+    <div class="title" data-type={type}>
+            <h1>
+                {title}
+            </h1> 
+    </div>
+  
+<style>
+    .title{
+        margin: 3rem 0 1.5rem;
+    }
+    .title > h1{
+        font-family: 'Metropolis-700', sans-serif;
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+}
+.title[data-type="small"] > h1{
+    font-size: 2rem;
+    line-height: 2.6rem;
+}
+.title[data-type="large"] > h1{
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+}
+@media (min-width: 990px) {
+    .title{
+        margin: 3rem 0;
+    }
+	.title[data-type="large"] > h1{
+    font-size: 3.8rem;
+    line-height: 4.2rem;
+}
+}
+</style>

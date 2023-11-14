@@ -1,3 +1,8 @@
+---
+import TopReadsCard from "./TopReadsCard.astro";
+import {topReads} from '../../mock/topReads'
+---
+
 <section id="top-reads" class="container">
     <div class="section_title_container">
         <div class="section_title">
@@ -6,57 +11,9 @@
     </div>
     <div class="top_reads_card__container">
         <div class="top_reads_card__list">
-            <a href="#" class="card">
-                <div class="card_img">
-                    <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2021/02/man-listening-to-friend-in-cafe-732x549-thumbnail.jpg"
-                        alt=""
-                    />
-                </div>
-                <div class="card_title">
-                    <h4>
-                        What Are the Signs and Symptoms of Depression in
-                        Men?
-                    </h4>
-                </div>
-            </a>
-            <a href="#" class="card">
-                <div class="card_img">
-                    <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/female-making-food-in-kitchen-732-549-feature-thumb.jpg"
-                        alt=""
-                    />
-                </div>
-                <div class="card_title">
-                    <h4>
-                        How Menopause Encouraged Me to Give Up Dieting
-                    </h4>
-                </div>
-            </a>
-            <a href="#" class="card">
-                <div class="card_img">
-                    <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/3140612-What-Tea-Should-You-Drink-to-Lower-Blood-Pressure-732x549-thumbnail.jpg"
-                        alt=""
-                    />
-                </div>
-                <div class="card_title">
-                    <h4>
-                        What Tea Should You Drink to Lower Blood Pressure?
-                    </h4>
-                </div>
-            </a>
-            <a href="#" class="card">
-                <div class="card_img">
-                    <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/08/Bald-man-with-eye-patches-drinking-coffee-thumbnail.jpg"
-                        alt=""
-                    />
-                </div>
-                <div class="card_title">
-                    <h4>Understanding Cancer Dizziness and Fatigue</h4>
-                </div>
-            </a>
+            {
+                topReads.map((topRead:any, index:number)=> <TopReadsCard href={topRead.href} imgSrc={topRead.imgSrc} title={topRead.title} key={index} />)
+            }
         </div>
     </div>
 </section>

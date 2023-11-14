@@ -2,54 +2,73 @@
 // Import styles or any other dependencies here
 interface Props {
 	title: string;
+    fontSize?: string;
+    icon?: string;
+    className?: string;
 }
 
-const { title } = Astro.props;
+const { title, fontSize, icon, className } = Astro.props;
 ---
-<!-- <script setup lang="ts">
-    export const props = defineProps<{
-      title: string;
-    }>();
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeader = document.querySelector<HTMLElement>('.accordion_header');
+    const accordionIcon = document.querySelector<HTMLElement>('.accordion_icon');
   
-    let isOpen = ref(false);
+    accordionHeader?.addEventListener('click', function() {
+      const accordionItem = this.parentElement as HTMLElement;
+      accordionItem.classList.toggle('active');
+      if(accordionItem.classList.contains('active')){
+        accordionIcon!.style.rotate = '45deg'
+      }else{
+        accordionIcon!.style.rotate = '0deg'
+      }
+    });
+  });
+
+
+  </script>
   
-    const toggleAccordion = () => {
-      isOpen.value = !isOpen.value;
-    };
-  </script> -->
-  
-  <template>
-    <div class="accordion">
-      <button @click="toggleAccordion">
-        <span>{title }</span>
-        <!-- <span>{{ isOpen ? '[-]' : '[+]' }}</span> -->
-      </button>
-  
-      <div v-if="isOpen" class="content">
+    <div class={`accordion_item ${className}`}>
+      <div class="accordion_header">
+            <h1 style={`font-size: ${fontSize ? fontSize : '1.8rem'};`}>
+                {title}
+            </h1> 
+        <div class="accordion_icon">
+            {icon ? <img src={icon} alt=""> : <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 40 40"><path d="M22 22h15.83a2 2 0 1 0 0-4H22V2.16a2 2 0 1 0-4 0V18H2.17a1.94 1.94 0 0 0-1.9 1.95 2.08 2.08 0 0 0 .55 1.42 2 2 0 0 0 1.35.63H18v15.83c.019.509.238.991.61 1.34a2.08 2.08 0 0 0 1.42.55 2 2 0 0 0 2-1.9z"></path></svg>  } 
+        </div>
+    </div>
+      <div class="accordion_content">
         <slot />
       </div>
     </div>
-  </template>
   
-  <style scoped>
-    .accordion {
-      margin-bottom: 1rem;
-    }
   
-    button {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5rem;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-  
-    .content {
-      padding: 1rem;
-      border: 1px solid #ccc;
-      background-color: #fff;
-    }
+  <style>
+
+.accordion_item {
+  width: 100%;
+}
+
+.accordion_header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.accordion_icon{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.accordion_content {
+  display: none;
+  padding: 1rem 2rem;
+}
+
+.accordion_item.active > .accordion_content {
+  display: block;
+}
+
   </style>
   
