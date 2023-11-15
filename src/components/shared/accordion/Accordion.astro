@@ -1,32 +1,14 @@
 ---
-// Import styles or any other dependencies here
 interface Props {
-	title: string;
-    fontSize?: string;
-    icon?: string;
-    className?: string;
+	title: any;
+    fontSize?: any;
+    icon?: any;
+    className?: any;
 }
 
 const { title, fontSize, icon, className } = Astro.props;
 ---
-<script>
-     document.addEventListener('DOMContentLoaded', function() {
-    const accordionHeader = document.querySelector<HTMLElement>('.accordion_header');
-    const accordionIcon = document.querySelector<HTMLElement>('.accordion_icon');
-  
-    accordionHeader?.addEventListener('click', function() {
-      const accordionItem = this.parentElement as HTMLElement;
-      accordionItem.classList.toggle('active');
-      if(accordionItem.classList.contains('active')){
-        accordionIcon!.style.rotate = '45deg'
-      }else{
-        accordionIcon!.style.rotate = '0deg'
-      }
-    });
-  });
 
-
-  </script>
   
     <div class={`accordion_item ${className}`}>
       <div class="accordion_header">
@@ -71,4 +53,22 @@ const { title, fontSize, icon, className } = Astro.props;
 }
 
   </style>
+  <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeader = document.querySelector<HTMLElement>('.accordion_header');
+    const accordionIcon = document.querySelector<HTMLElement>('.accordion_icon');
+  
+    accordionHeader?.addEventListener('click', function() {
+      const accordionItem = this.parentElement as HTMLElement;
+      accordionItem.classList.toggle('active');
+      if(accordionItem.classList.contains('active')){
+        accordionIcon!.style.rotate = '45deg'
+      }else{
+        accordionIcon!.style.rotate = '0deg'
+      }
+    });
+  });
+
+
+  </script>
   

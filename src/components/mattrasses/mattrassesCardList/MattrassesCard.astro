@@ -1,9 +1,161 @@
 ---
 import './MattrassesCardList.css'
 import Accordion from '../../shared/accordion/Accordion.astro'
+import Title from '../../shared/title/Title.astro'
+import Review from '../../shared/review/Review.astro'
+
+
+const pros = [
+    'All materials are certified organic and meet strict standards for safety.',
+    'The cotton mattress top is soft and comfortable, while the coils support your spine and back as you sleep.',
+    'The mattresses have been designed to provide maximum comfort, support, and durability.',
+    'Our mattress is made with a breathable material that allows you to breathe easily during the night.',
+]
+const cons = [
+    "We don't offer any refunds or exchanges.",
+    'People who weigh less may find the mattress does not contour to their body.'
+]
+const productDetails = [
+    {
+        title: 'Firmness',
+        value: 'medium firm or gentle firm'
+    },
+    {
+        title: 'Available sizes',
+        value: 'twin, twin XL, full, queen, king, California king'
+    },
+    {
+        title: 'Compatible with adjustable base',
+        value: 'yes'
+    },
+    {
+        title: 'Cooling technology',
+        value: 'yes'
+    },
+    {
+        title: 'Sleeping position',
+        value: 'side'
+    },
+    {
+        title: 'Firmness',
+        value: 'medium firm or gentle firm'
+    },
+    {
+        title: 'Firmness',
+        value: 'medium firm or gentle firm'
+    },
+    {
+        title: 'Firmness',
+        value: 'medium firm or gentle firm'
+    },
+]
 ---
 
 <div class="mattrass_card">
-    <Accordion title='Pros and cons' className="mattrass_card_accordion" fontSize="1.7rem"></Accordion>
-    <Accordion title='Product details' className="mattrass_card_accordion" fontSize="1.7rem"></Accordion>
+    <Title title='Best overall mattress for back and neck pain' type="small" />
+    <div class="mattrass_card_container">
+        <div class="mattrass_card_text">
+            <h3>
+                <a target="_blank" rel="noopener noreferrer nofollow" href="https://activation.healthline.com/api/member-offers/4236/redirect?lp=328&amp;tc=120226&amp;subid2=%2Fhealth%2Fhealthy-sleep%2Fbest-mattress-for-back-and-neck-pain&amp;subid=Impact_AvocadoGreenMattressUniversalHL_4396&amp;correlationId=c91a5dbf-bc30-4c35-a4da-ac2b700297b9" data-testid="dt-link-2cb1a403ee7ee225a88c89d4eebbc873113e388d8751b03ff9581e68845b3b8f">Avocado Green Mattress</a>
+            </h3>
+        </div>
+        <Review ratings={[5,5,5,5,5,5,5]} />
+        <div class="product_title_container flex flex_align_center">
+            <div class="product_img">
+                <img src="https://healthline.canto.com/direct/image/632r9r125133fc13pekbdcmn5b/6AiX7129ZLH3KEg_JcCxENzJs2Y/original?content-type=image%2Fpng&amp;name=avocado-green-mattress_Without_BG.png" alt="Front of Avocado Green Mattress on a bed frame">
+            </div>
+            <div class="product_title">
+                <ul>
+                    <li>
+                        <span>Type:</span> 
+                        hybrid
+                    </li>
+                    <li>
+                        <span>Warranty:</span> 
+                        25 years
+                    </li>
+                    <li>
+                        <span>Trial period:</span> 
+                        1 year
+                    </li>
+                </ul>
+                <div class="mattrass_desk">
+                    <p class="product_discount">Use code 
+                        <span class="codeSpan">“SAVE10”</span>
+                         for <span>10% off</span>.
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer nofollow" href="https://activation.healthline.com/api/member-offers/4236/redirect?lp=328&amp;tc=120226&amp;subid2=%2Fhealth%2Fhealthy-sleep%2Fbest-mattress-for-back-and-neck-pain&amp;subid=Impact_AvocadoGreenMattressUniversalHL_4396&amp;correlationId=1387cded-8c34-45f1-aa48-47977e311ef0">$1,999 AT AVOCADO<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" style="width: 15px; vertical-align: middle; margin: 4px 0px 5px 6px;"><path fill="currentColor" fill-rule="evenodd" d="M5.66 0a.7.7 0 0 1 .69.7.7.7 0 0 1-.7.68h-2.7c-.26 0-.52-.02-.77.01h.1-.06l-.15.04-.06.02-.05.03a1.8 1.8 0 0 0-.13.08l-.06.04-.04.04a1.8 1.8 0 0 0-.1.1l-.04.05-.04.04a1.8 1.8 0 0 0-.07.13l-.03.06-.02.05-.04.15v.05l-.02.13v8.93c0 .16 0 .33.02.49v-.1.06l.04.15.02.05-.03-.07.03.08.03.08-.03-.08.03.05.08.13.03.05.04.05.1.1.06.04.04.04.13.07.05.02.06.03.15.04h.04l.14.01h8.93c.16 0 .32.01.48-.01h-.1.07l.15-.04.05-.02.06-.03.13-.08.05-.04.05-.04.1-.1.04-.05.03-.04.08-.13.02-.05-.03.08.07-.16-.04.08.02-.06.04-.15.01-.05v.08-.09l.02-.09-.02.1.01-.2V8.3a.7.7 0 0 1 .7-.69.7.7 0 0 1 .68.7v3.38a2.38 2.38 0 0 1-.87 1.74c-.1.08-.22.17-.34.24a2.58 2.58 0 0 1-1.36.33H2.45c-.62 0-1.23-.23-1.69-.66A2.45 2.45 0 0 1 0 11.55V2.59A2.4 2.4 0 0 1 2 .04C2.33 0 2.64 0 2.95 0h2.72Zm3.4 0h4.27-.08.08a.67.67 0 0 1 .63.44v.03l.01.02c.02.06.03.12.03.2v4.34c-.01.37-.31.67-.69.67a.68.68 0 0 1-.67-.68v-2.7l-.4.4-.87.87-2.1 2.1L7.5 7.46l-.74.74a.68.68 0 0 1-.96 0 .69.69 0 0 1 0-.95l.69-.7 1.74-1.74 2.1-2.1 1.35-1.35H8.97A.68.68 0 0 1 8.3.67c0-.37.3-.67.68-.67h.08Z" clip-rule="evenodd"></path></svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="mattrass_mob">
+            <p class="product_discount">Use code 
+                <span class="codeSpan">“SAVE10”</span>
+                 for <span>10% off</span>.
+            </p>
+            <a target="_blank" rel="noopener noreferrer nofollow" href="https://activation.healthline.com/api/member-offers/4236/redirect?lp=328&amp;tc=120226&amp;subid2=%2Fhealth%2Fhealthy-sleep%2Fbest-mattress-for-back-and-neck-pain&amp;subid=Impact_AvocadoGreenMattressUniversalHL_4396&amp;correlationId=1387cded-8c34-45f1-aa48-47977e311ef0">$1,999 AT AVOCADO<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" style="width: 15px; vertical-align: middle; margin: 4px 0px 5px 6px;"><path fill="currentColor" fill-rule="evenodd" d="M5.66 0a.7.7 0 0 1 .69.7.7.7 0 0 1-.7.68h-2.7c-.26 0-.52-.02-.77.01h.1-.06l-.15.04-.06.02-.05.03a1.8 1.8 0 0 0-.13.08l-.06.04-.04.04a1.8 1.8 0 0 0-.1.1l-.04.05-.04.04a1.8 1.8 0 0 0-.07.13l-.03.06-.02.05-.04.15v.05l-.02.13v8.93c0 .16 0 .33.02.49v-.1.06l.04.15.02.05-.03-.07.03.08.03.08-.03-.08.03.05.08.13.03.05.04.05.1.1.06.04.04.04.13.07.05.02.06.03.15.04h.04l.14.01h8.93c.16 0 .32.01.48-.01h-.1.07l.15-.04.05-.02.06-.03.13-.08.05-.04.05-.04.1-.1.04-.05.03-.04.08-.13.02-.05-.03.08.07-.16-.04.08.02-.06.04-.15.01-.05v.08-.09l.02-.09-.02.1.01-.2V8.3a.7.7 0 0 1 .7-.69.7.7 0 0 1 .68.7v3.38a2.38 2.38 0 0 1-.87 1.74c-.1.08-.22.17-.34.24a2.58 2.58 0 0 1-1.36.33H2.45c-.62 0-1.23-.23-1.69-.66A2.45 2.45 0 0 1 0 11.55V2.59A2.4 2.4 0 0 1 2 .04C2.33 0 2.64 0 2.95 0h2.72Zm3.4 0h4.27-.08.08a.67.67 0 0 1 .63.44v.03l.01.02c.02.06.03.12.03.2v4.34c-.01.37-.31.67-.69.67a.68.68 0 0 1-.67-.68v-2.7l-.4.4-.87.87-2.1 2.1L7.5 7.46l-.74.74a.68.68 0 0 1-.96 0 .69.69 0 0 1 0-.95l.69-.7 1.74-1.74 2.1-2.1 1.35-1.35H8.97A.68.68 0 0 1 8.3.67c0-.37.3-.67.68-.67h.08Z" clip-rule="evenodd"></path></svg></a>
+        </div>
+    </div>
+    <div class="mattrass_accordion">
+        <div class="mattrass_accordion_body">
+                <p>Avocado’s Green Mattress combines a medium-firm, supportive mattress with soft, sustainable materials. This 
+                    <a href="/health/healthy-sleep/best-hybrid-mattress">hybrid</a> 
+                    mattress contains latex foam and pocketed coils arranged in five ergonomic zones for superior back and neck support when you need it the most.
+                </p>
+                <p>The materials used to make the mattress are noteworthy, too. Global Organic Textile Standard (GOTS) certified organic wool and organic latex are hand-sewn together, so there’s no toxic glue or chemical flame retardants. This mattress is also 
+                    <a href="https://www.ul.com/resources/ul-greenguard-certification-program">Greenguard Gold</a> 
+                    and 
+                    <a href="https://www.madesafe.org/">Made Safe certified</a>, which means it meets strict standards for chemical emissions and does not contain any potentially hazardous materials.
+                </p>
+                <p>Plus, the wool and cotton help with temperature regulation. Reviewers frequently mention that this mattress does not get too hot or too cold.</p>
+                <p>The high quality materials mean that this mattress costs a bit more than some competitors. It comes in medium firm, but the added pillow topper can provide some extra coziness if you’re willing to pay extra.</p>
+                <div class="overlay"></div>
+        </div>
+        <button type="button" aria-expanded="false" class="mattrass_accordion_button"><span id="icon-disclaimer-open"></span></button>
+    </div>
+    <Accordion title='Pros and cons' className="mattrass_card_accordion" fontSize="1.7rem">
+        <ul class="mattrass_card_list">
+            {
+                pros.map((pro) => (
+                    <li>{pro}</li>
+                ))
+            }
+        </ul>
+        <ul class="mattrass_card_list">
+            {
+                cons.map((con) => (
+                    <li>{con}</li>
+                ))
+            }
+        </ul>
+    </Accordion>
+    <Accordion title='Product details' className="mattrass_card_accordion" fontSize="1.7rem">
+        <ul class="mattrasses_details_list">
+            {
+                productDetails.map((product) => (
+                    <li><span>{product.title}:</span> {" "}{product.value}</li>
+                ))
+            }
+        </ul>
+    </Accordion>
 </div>
+
+<script>
+	const TOGGLE: any = document.querySelector(".mattrass_accordion_button");
+	const ACCORDION_BODY: any = document.querySelector(".mattrass_accordion_body");
+    const OVERLAY:any = document.querySelector(".overlay");
+
+const HANDLE_TOGGLE = () => {
+  const isPressed = TOGGLE.matches("[aria-expanded=true]");
+  TOGGLE.setAttribute("aria-expanded", isPressed ? "false" : "true");
+  if (!isPressed) {
+    ACCORDION_BODY.style.maxHeight="200rem";
+    OVERLAY.style.background = 'none'
+  } else {
+    ACCORDION_BODY.style.maxHeight = '15rem';
+    OVERLAY.style.background = "linear-gradient(to right,rgba(255, 255, 255, 0.5) 100%,rgba(255, 255, 255, 0.5) 100%)"
+  }
+};
+
+TOGGLE.addEventListener("click", HANDLE_TOGGLE);
+</script>

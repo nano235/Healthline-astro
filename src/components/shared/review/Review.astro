@@ -1,0 +1,82 @@
+---
+ratings: [5, 4, 3, 5, 4] // Array of ratings (you can pass this as a prop)
+interface Props {
+	ratings: any[];
+}
+
+const { ratings } = Astro.props;
+
+function calculateAverage(ratings) {
+    const total = ratings.reduce((acc, curr) => acc + curr, 0);
+    return total / ratings.length;
+  }
+  function calculateStarFill(ratings, star) {
+    const averageRating = calculateAverage(ratings);
+    return star <= Math.round(averageRating) ? '#FFD700' : 'none';
+  }
+//   function calculateStarFill(ratings, star) {
+//     const averageRating = calculateAverage(ratings);
+//     const roundedRating = Math.round(averageRating);
+//     const decimalPart = averageRating - roundedRating;
+    
+//     if (star < roundedRating) {
+//       return '#FFD700'; // Fill completely
+//     } else if (star === roundedRating) {
+//       return `url(#partialFill${star})`; // Fill partially for the last star
+//     } else {
+//       return 'none'; // Unfilled
+//     }
+//   }
+---
+
+<div class="review">
+  <div class="stars">
+    {
+        [1,2,3,4,5].map((star)=>(
+
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill={calculateStarFill(ratings, star)}
+        class="star"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+        />
+      </svg>
+        ))
+    }
+  <p class="rating">
+    <span>{calculateAverage(ratings).toFixed(1)}</span>
+    {" "}({ratings.length}+) FROM AVOCADO
+</p>
+  </div>
+</div>
+
+
+<style>
+  .stars {
+    display: flex;
+    align-items: center;
+  }
+
+  .star {
+    margin-right: 0.1rem;
+  }
+.rating{
+    margin-left: 0.5rem;
+}
+.rating{
+    font-size: 1rem;
+  }
+  .rating span{
+    font-size: 1rem;
+    font-family: "Metropolis-700", sans-serif;
+  }
+</style>

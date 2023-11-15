@@ -41,10 +41,14 @@
 	fill: hsl(0 0% 98%);
 }
 [aria-pressed="true"] rect {
-	transition: translate 0.2s, rotate 0.2s 0.3s;
+	transition:
+		translate 0.2s,
+		rotate 0.2s 0.3s;
 }
 rect {
-	transition: rotate 0.2s 0s, translate 0.2s 0.2s;
+	transition:
+		rotate 0.2s 0s,
+		translate 0.2s 0.2s;
 }
 
 [aria-pressed="true"] rect:nth-of-type(1) {
@@ -133,7 +137,7 @@ rect {
 	color: inherit;
 	padding: 0.9rem 0 0.7rem 1.2rem;
 	border: none;
-	-webkit-appearance: none;
+	/* -webkit-appearance: none; */
 }
 .header_search__button {
 	position: relative;

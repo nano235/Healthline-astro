@@ -5,9 +5,199 @@
 	padding: 2rem 2rem 0 2rem;
 	border-radius: 1rem;
 }
+.mattrass_card_container {
+	padding-bottom: 2rem;
+	margin-bottom: 1.6rem;
+	border-bottom: 0.1rem solid #dcdbdb;
+}
 .mattrass_card_accordion {
 	border-top: 0.1rem solid #dcdbdb;
 }
-.mattrass_card_accordion > .accordion_header {
+.mattrass_card_accordion > div:first-child {
 	padding: 1.4rem 0;
+}
+.mattrass_card_list {
+	list-style-type: none;
+	padding-left: 1.7rem;
+	margin-bottom: 2rem;
+	list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0, 0, 40, 40'%3E%3Cpath fill='%2302838d' d='M13.3 37.41a2.5 2.5 0 0 1-2-.94L2.08 24.92A2.509 2.509 0 0 1 6 21.79l7.32 9.13 21.14-26.4a2.5 2.5 0 0 1 3.9 3.13L15.25 36.48a2.503 2.503 0 0 1-1.95.93z'/%3E%3C/svg%3E");
+}
+.mattrass_card_list:nth-child(2) {
+	list-style-type: none;
+	padding-left: 1.7rem;
+	list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0, 0, 40, 40'%3E%3Cpath fill='%23f0533a' d='M38.67 33.34L25.34 20 38.67 6.66a3.775 3.775 0 1 0-5.34-5.34L20 14.66 6.66 1.33a3.769 3.769 0 1 0-5.33 5.33L14.66 20 1.33 33.34a3.775 3.775 0 1 0 5.34 5.34L20 25.34l13.34 13.33a3.775 3.775 0 1 0 5.34-5.34z'/%3E%3C/svg%3E");
+}
+.mattrass_card_list > li {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	margin-bottom: 0.8rem;
+}
+.mattrasses_details_list {
+	padding-left: 3rem;
+	list-style-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='2.5' fill='%23EC1C82'/%3E%3C/svg%3E");
+	margin: 1.7rem 0;
+}
+.mattrasses_details_list li {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	margin-bottom: 0.8rem;
+}
+.mattrasses_details_list li span {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	font-family: "Metropolis-700", sans-serif;
+}
+
+.mattrass_card_text > h3 {
+	font-family: "Metropolis-700", sans-serif;
+	font-size: 2.2rem;
+	line-height: 2.8rem;
+	margin-bottom: 0.6rem;
+}
+
+.mattrass_card_text a {
+	color: #02838d;
+}
+
+.product_img {
+	background-color: #81b9bf;
+	width: 9rem;
+	height: 9rem;
+	margin-right: 1.2rem;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.product_title ul {
+	padding-left: 3rem;
+	list-style-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='2.5' fill='%23EC1C82'/%3E%3C/svg%3E");
+	margin: 1.7rem 0;
+}
+.product_title ul li {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	margin-bottom: 0.8rem;
+}
+.product_title ul li span {
+	font-size: 1.4rem;
+	line-height: 2rem;
+	font-family: "Metropolis-700", sans-serif;
+}
+
+.product_discount {
+	margin-bottom: 0.8rem;
+	text-align: center;
+}
+.product_discount > span:first-child {
+	font-family: "Metropolis-700", sans-serif;
+	color: #db1f88;
+	text-transform: uppercase;
+}
+.product_discount > span:last-child {
+	font-family: "Metropolis-700", sans-serif;
+	color: var(--text-colour);
+}
+.mattrass_desk > a,
+.mattrass_mob > a {
+	font-size: 1.4rem;
+	width: 100%;
+	color: white;
+	background: #db1f88;
+	height: 5rem;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Metropolis-700", sans-serif;
+}
+.mattrass_desk {
+	display: none;
+}
+
+.mattrass_accordion {
+	margin-bottom: 1.6rem;
+}
+.mattrass_accordion_body {
+	position: relative;
+	max-height: 15.2rem;
+	overflow: hidden;
+	--read-more-content-background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0.5) 100%,
+		rgba(255, 255, 255, 0.5) 100%
+	);
+}
+.overlay {
+	top: 85%;
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0.5) 100%,
+		rgba(255, 255, 255, 0.5) 100%
+	);
+	pointer-events: none;
+}
+.mattrass_accordion_body p {
+	margin-bottom: 1.6rem;
+}
+.mattrass_accordion_body p a {
+	text-decoration: underline;
+	color: #02838d;
+}
+.mattrass_accordion button {
+	display: block;
+	width: 100%;
+	border: 0;
+	background: white;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+.mattrass_accordion button span {
+	margin: -0.55rem 0.5rem 0 0;
+	transform: rotate(45deg);
+	content: "";
+	display: inline-block;
+	width: 1.1rem;
+	height: 1.1rem;
+	transition: transform 0.2s linear;
+	border-right: 0.2rem solid;
+	border-bottom: 0.2rem solid;
+	border-color: initial;
+}
+.mattrass_accordion button[aria-expanded="true"] span {
+	transform: rotate(-135deg);
+	margin-top: 0.55rem;
+}
+
+@media (min-width: 990px) {
+	.product_img {
+		width: 25rem;
+		height: 25rem;
+	}
+	.product_title ul {
+		padding-left: 2rem;
+	}
+	.product_title ul li {
+		font-size: 1.8rem;
+		line-height: 2.6rem;
+	}
+	.product_title ul li span {
+		font-size: 1.8rem;
+		line-height: 2.6rem;
+	}
+	.mattrass_mob {
+		display: none;
+	}
+	.mattrass_desk {
+		display: block;
+	}
 }
