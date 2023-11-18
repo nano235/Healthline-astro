@@ -116,6 +116,13 @@
 .mattrass_accordion {
 	margin-bottom: 1.6rem;
 }
+.mattrass_accordion > h3 {
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin-top: 1.6rem;
+	margin-bottom: 1.2rem;
+	font-family: "Metropolis-700", sans-serif;
+}
 .mattrass_accordion_body {
 	position: relative;
 	max-height: 15.2rem;
@@ -199,5 +206,16 @@
 	}
 	.mattrass_desk {
 		display: block;
+	}
+	.mattrass_card_text a {
+		font-size: 2.2rem;
+		line-height: 3rem;
+	}
+	.product_title_container {
+		margin-top: 1.6rem;
+	}
+	.mattrass_accordion > h3 {
+		font-size: 2rem;
+		line-height: 2.6rem;
 	}
 }

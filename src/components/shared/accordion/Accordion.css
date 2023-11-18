@@ -1,0 +1,24 @@
+.accordion_item {
+	width: 100%;
+}
+
+.accordion_header {
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+.accordion_icon {
+	width: 1.6rem;
+	height: 1.6rem;
+}
+
+.accordion_content {
+	display: none;
+	padding: 1rem 2rem;
+}
+
+.accordion_item.active > .accordion_content {
+	display: block;
+}

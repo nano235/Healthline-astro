@@ -24,11 +24,35 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header />
-		<main style={title === 'migraine' || title === 'mattrasses' ? 'background-color: white;' : ''}>
-
+		<Header page={title} />
+		<main id="main">
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<script>
+	const screenWidth = window.screen.width;
+	const currentURL = window.location.href;
+	const urlArr = currentURL.split('/')
+	const correctUrl = urlArr[urlArr.length - 1]
+	const main:any = document.getElementById('main')
+	const isActive:any = !correctUrl || correctUrl !=='index.html' 
+	if(screenWidth > 990 && isActive){
+		main.style.paddingTop = '18rem'
+	}
+	if(screenWidth < 990 && isActive){
+		main.style.paddingTop = '10rem'
+	}
+	if(isActive){
+		main.style.backgroundColor = 'white'
+	}
+</script>
+
+<style>
+	.main[data-active=true]{
+		background-color: white;
+		margin-top: 7rem;
+	}
+</style>

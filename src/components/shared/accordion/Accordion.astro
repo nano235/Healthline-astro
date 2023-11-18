@@ -55,9 +55,10 @@ const { title, fontSize, icon, className } = Astro.props;
   </style>
   <script>
      document.addEventListener('DOMContentLoaded', function() {
-    const accordionHeader = document.querySelector<HTMLElement>('.accordion_header');
+    const accordionHeaders = document.querySelectorAll<HTMLElement>('.accordion_header');
     const accordionIcon = document.querySelector<HTMLElement>('.accordion_icon');
   
+      accordionHeaders.forEach(accordionHeader => {
     accordionHeader?.addEventListener('click', function() {
       const accordionItem = this.parentElement as HTMLElement;
       accordionItem.classList.toggle('active');
@@ -66,7 +67,7 @@ const { title, fontSize, icon, className } = Astro.props;
       }else{
         accordionIcon!.style.rotate = '0deg'
       }
-    });
+    });})
   });
 
 

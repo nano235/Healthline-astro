@@ -1,44 +1,38 @@
 ---
 import './Hero.css'
+interface Data {
+	title: string;
+    description: string;
+    img: string;
+}
+interface Props{
+    data: Data[]
+}
+
+const { data } = Astro.props;
 ---
 
 <section id="hero" class="container">
         <div class="hero">
-
-            <div class="hero_card">
+            {
+                data.map((card:any)=> <div class="hero_card">
                 <div class="hero_card__image">
                     <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/11/young-adult-male-basketball-court-homepage-left-thumb-crop-732x673-1.jpg"
-                        alt=""
+                        src={card.img}
+                        alt={card.title}
                     />
                 </div>
                 <div class="hero_card__details">
                     <div class="hero_card__text">
                         <h3>
-                            These 8 Habits Can Reduce Your Biological Age by up to 6
-                            Years
+                            {card.title}
                         </h3>
                     </div>
                     <div class="hero_card__text">
-                        <p>These 8 lifestyle changes may slow biological aging.</p>
+                        <p>{card.description}</p>
                     </div>
                 </div>
-            </div>
-            <div class="hero_card">
-                <div class="hero_card__image">
-                    <img
-                        src="https://media.post.rvohealth.io/wp-content/uploads/2023/09/close-up-woman-holding-chocolate-ice-cream-cone-732x549-thumbnail.jpg"
-                        alt=""
-                    />
-                </div>
-                <div class="hero_card__details">
-                    <div class="hero_card__text">
-                        <h3>Does Ice Cream Help with a Sore Throat?</h3>
-                    </div>
-                    <div class="hero_card__text">
-                        <p>Is ice cream the fix for your sore throat this winter?</p>
-                    </div>
-                </div>
-            </div>
+            </div>)
+            }
         </div>
 </section>

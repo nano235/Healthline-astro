@@ -97,6 +97,7 @@ const productDetails = [
         </div>
     </div>
     <div class="mattrass_accordion">
+        <h3>Healthline's review</h3>
         <div class="mattrass_accordion_body">
                 <p>Avocado’s Green Mattress combines a medium-firm, supportive mattress with soft, sustainable materials. This 
                     <a href="/health/healthy-sleep/best-hybrid-mattress">hybrid</a> 
@@ -140,7 +141,7 @@ const productDetails = [
     </Accordion>
 </div>
 
-<script>
+<!-- <script>
 	const TOGGLE: any = document.querySelector(".mattrass_accordion_button");
 	const ACCORDION_BODY: any = document.querySelector(".mattrass_accordion_body");
     const OVERLAY:any = document.querySelector(".overlay");
@@ -158,4 +159,26 @@ const HANDLE_TOGGLE = () => {
 };
 
 TOGGLE.addEventListener("click", HANDLE_TOGGLE);
-</script>
+</script> -->
+
+<script>
+    const ACCORDION_BUTTONS = document.querySelectorAll(".mattrass_accordion_button");
+    const ACCORDION_BODIES:any = document.querySelectorAll(".mattrass_accordion_body");
+    const OVERLAYS:any = document.querySelectorAll(".overlay");
+
+    const HANDLE_TOGGLE = (index:any) => {
+      const isPressed = ACCORDION_BUTTONS[index].matches("[aria-expanded=true]");
+      ACCORDION_BUTTONS[index].setAttribute("aria-expanded", isPressed ? "false" : "true");
+      if (!isPressed) {
+        ACCORDION_BODIES[index].style.maxHeight = "200rem";
+        OVERLAYS[index].style.background = 'none';
+      } else {
+        ACCORDION_BODIES[index].style.maxHeight = '15rem';
+        OVERLAYS[index].style.background = "linear-gradient(to right,rgba(255, 255, 255, 0.5) 100%,rgba(255, 255, 255, 0.5) 100%)";
+      }
+    };
+
+    ACCORDION_BUTTONS.forEach((button, index) => {
+      button.addEventListener("click", () => HANDLE_TOGGLE(index));
+    });
+  </script>

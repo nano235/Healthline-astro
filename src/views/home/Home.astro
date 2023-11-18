@@ -9,10 +9,23 @@ interface Props {
 	title: string;
 }
 
+const heroData = [
+    {
+        title: "These 8 Habits Can Reduce Your Biological Age by up to 6 Years",
+        description: 'These 8 lifestyle changes may slow biological aging.',
+        img: 'https://media.post.rvohealth.io/wp-content/uploads/2023/11/young-adult-male-basketball-court-homepage-left-thumb-crop-732x673-1.jpg'
+    },
+    {
+        title: "These 8 Habits Can Reduce Your Biological Age by up to 6 Years",
+        description: 'These 8 lifestyle changes may slow biological aging.',
+        img: 'https://media.post.rvohealth.io/wp-content/uploads/2023/11/young-adult-male-basketball-court-homepage-left-thumb-crop-732x673-1.jpg'
+    }
+]
+
 ---
 
 <>
-    <Hero />
+    <Hero data={heroData} />
     <Explore />
     <TopReads />
     <Science />

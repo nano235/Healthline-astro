@@ -1,7 +1,14 @@
 ---
 import './header.css'
+import { navLinks } from '../../../mock/navLinks';
+interface Props {
+	page:string;
+}
+
+const { page } = Astro.props;
 ---
 
+<div class="fixed">
 <header class="header">
     <div class="container">
         <div class="header_container">
@@ -53,76 +60,125 @@ import './header.css'
 				</a>
 				<div class="header_wrapper__collapsed header_wrapper header_nav">
 					<div class="header_nav__container">
+						<div class="header_search_container">
+							<form action="/search" class="header_search">
+								<div class="header_input__container">
+									<div class="header_input__wrapper" style="display: inline-block;">
+										<input class="header_input" name="q1" placeholder="Search Healthline" aria-label="Search Healthline" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" value="">
+									</div>
+								</div>
+								<button class="header_search__button" data-testid="button" type="submit" aria-label="Click to Search">
+									<span class="header_search__text">
+										GO
+									</span>
+								</button>
+							</form>
+						</div>
+						<div class="header_menu__container">
+							<ul class="mob_header_menu">
+								{
+									navLinks.map((navLink:any)=> (
 
-					</div>
-					<div class="header_search_container">
-						<form action="/search" class="header_search">
-							<div class="header_input__container">
-								<div class="header_input__wrapper" style="display: inline-block;">
-									<input class="header_input" name="q1" placeholder="Search Healthline" aria-label="Search Healthline" role="combobox" aria-autocomplete="list" aria-expanded="false" autocomplete="off" value="">
-								</div>
+										<li class="header_menu__item">
+											<button class="mob_header_menu__button">
+												<h3>
+													{navLink.title}
+													</h3>
+												<div class="header_menu__item__chevron-dark">
+													<img src="/svgs/chevron.svg" alt="">
+												</div>
+												<div class="header_menu__item__chevron-white">
+													<img src="/svgs/chevron-white.svg" alt="">
+												</div>
+												<div class="mob_submenu">
+													<div class="menu_title center">
+														<h1>{navLink.title}</h1>
+														<div class="back_button">
+															<img src="/svgs/chevron.svg" alt="">
+														</div>
+													</div>
+													<ul class="submenu_items">
+														{
+															navLink.subMenu.map((sub:any)=>(
+		
+																<li class="submenu_item">
+																	<div class="submenu_title">
+																		<h2>{sub.title}</h2>
+																	</div>
+																	<ul class="submenu_link__container">
+																		{
+																			sub.menus.map((menu:any)=>(
+																				<li>
+																					<a href={`${menu.url}`}>
+																						{menu.title}
+																					</a>
+																				</li>
+																			))
+																		}
+																	</ul>
+																</li>
+															))
+														}
+														</ul>
+												</div>
+											</button>
+										</li>
+									))
+								}
+							</ul>
+							<ul class="header_menu">
+								{
+									navLinks.map((navLink:any)=> (
+
+										<li class="header_menu__item">
+											<button class="header_menu__button">
+												<h3>
+													{navLink.title}
+													</h3>
+												<div class="header_menu__item__chevron-dark">
+													<img src="/svgs/chevron.svg" alt="">
+												</div>
+												<div class="header_menu__item__chevron-white">
+													<img src="/svgs/chevron-white.svg" alt="">
+												</div>
+												<div class="submenu">
+													<div class="menu_title center">
+														<h1>{navLink.title}</h1>
+														<div class="back_button">
+															<img src="/svgs/chevron.svg" alt="">
+														</div>
+													</div>
+													<ul class="submenu_items" style={`grid-template-columns: repeat(${navLink.subMenu.length}, 1fr);`}>
+														{
+															navLink.subMenu.map((sub:any)=>(
+		
+																<li class="submenu_item">
+																	<div class="submenu_title">
+																		<h2>{sub.title}</h2>
+																	</div>
+																	<ul class="submenu_link__container">
+																		{
+																			sub.menus.map((menu:any)=>(
+																				<li>
+																					<a href={`${menu.url}`}>
+																						{menu.title}
+																					</a>
+																				</li>
+																			))
+																		}
+																	</ul>
+																</li>
+															))
+														}
+														</ul>
+												</div>
+											</button>
+										</li>
+									))
+								}
+							</ul>
 							</div>
-							<button class="header_search__button" data-testid="button" type="submit" aria-label="Click to Search">
-								<span class="header_search__text">
-									GO
-								</span>
-							</button>
-						</form>
-					</div>
-					<ul class="header_menu">
-						<li class="header_menu__item">
-							<button>
-								<h3>
-									Health Conditions
-									</h3>
-								<div class="header_menu__item__chevron-dark">
-									<img src="/svgs/chevron.svg" alt="">
-								</div>
-								<div class="header_menu__item__chevron-white">
-									<img src="/svgs/chevron-white.svg" alt="">
-								</div>
-							</button>
-						</li>
-						<li class="header_menu__item">
-							<button>
-								<h3>
-									Discover
-									</h3>
-								<div class="header_menu__item__chevron-dark">
-									<img src="/svgs/chevron.svg" alt="">
-								</div>
-								<div class="header_menu__item__chevron-white">
-									<img src="/svgs/chevron-white.svg" alt="">
-								</div>
-							</button>
-						</li>
-						<li class="header_menu__item">
-							<button>
-								<h3>
-									Plan
-									</h3>
-								<div class="header_menu__item__chevron-dark">
-									<img src="/svgs/chevron.svg" alt="">
-								</div>
-								<div class="header_menu__item__chevron-white">
-									<img src="/svgs/chevron-white.svg" alt="">
-								</div>
-							</button>
-						</li>
-						<li class="header_menu__item">
-							<button>
-								<h3>
-									Connect
-									</h3>
-								<div class="header_menu__item__chevron-dark">
-									<img src="/svgs/chevron.svg" alt="">
-								</div>
-								<div class="header_menu__item__chevron-white">
-									<img src="/svgs/chevron-white.svg" alt="">
-								</div>
-							</button>
-						</li>
-					</ul>
+							</div>
 				</div>
 				<div class="flex flex_align_center">
 					<button class="header_sub__button">SUBSCRIBE</button>
@@ -134,21 +190,110 @@ import './header.css'
 		</div>
     </div>
 </header>
+{	page !=='home' &&
+	<div class="small_header">
+		<div class="container">
+			
+			<nav class="small_header__nav">
+				<div class="small_header__title">
+					<a href="">{page}</a>
+				</div>
+				<div class="small_header__nav-wrapper">
+					<button class="small_header__icon icon_left">
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 19 19"><path fill="#231F20" fill-rule="evenodd" d="M14.95 2.222 13.729 1l-.611.611L5.339 9.39l-.611.61.611.611 7.778 7.779.61.61 1.223-1.222-.611-.611L7.173 10l7.777-7.778z"></path></svg>
+					</button>
+					<div class="small_header__navlist">
+						<ul>
+						
+							{
+								[1,2,3,4,5,6,7].map(()=> {
+									return (
+										<li class="small_link">
+											<a href="">{page}</a>
+										</li>
+									)
+								})
+							}
+						</ul>
+					</div>
+					<div class="small_header__icon icon_right">
+						<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 19 19"><path fill="#231F20" fill-rule="evenodd" d="M4.05 1.222 5.271.001l.611.611 7.779 7.777.611.61-.611.612-7.778 7.778-.61.61-1.223-1.221.611-.611L11.827 9 4.05 1.222z"></path></svg>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+}
+</div>
 
 <script>
 	const TOGGLE: any = document.querySelector(".header_hamburger");
 	const MENU: any = document.querySelector(".header_nav");
+	const buttons = document.querySelectorAll('.mob_header_menu__button');
+  const menuContainer = document.querySelector<HTMLElement>('.header_nav__container')
 
 const HANDLE_TOGGLE = () => {
   const isPressed = TOGGLE.matches("[aria-pressed=true]");
   TOGGLE.setAttribute("aria-pressed", isPressed ? "false" : "true");
 
+  menuContainer!.style.transform = "translateX(0)"
   if (!isPressed) {
     MENU.classList.remove("header_wrapper__collapsed");
   } else {
     MENU.classList.add("header_wrapper__collapsed");
   }
 };
-
 TOGGLE.addEventListener("click", HANDLE_TOGGLE);
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', function(){
+		button.setAttribute("aria-pressed", 'true')
+		const isPressed = button.matches("[aria-pressed=true]");
+		if(isPressed){
+			menuContainer!.style.transform = "translateX(-100vw)"
+		}
+	});
+  });
+  const resetButtons = document.querySelectorAll('.back_button');
+resetButtons!.forEach(resetButton =>{
+resetButton!.addEventListener('click', () => {
+  buttons.forEach(button => {
+    button.setAttribute('aria-pressed', 'false');
+  });
+});})
+
+// Small header script
+
+const scrollContainer = document.querySelector<HTMLDivElement>('.small_header__navlist');
+const scrollContent = document.querySelector<HTMLDivElement>('.small_link');
+const scrollLeftBtn = document.querySelector<HTMLButtonElement>('.icon_left');
+const scrollRightBtn = document.querySelector<HTMLButtonElement>('.icon_right');
+
+scrollLeftBtn?.addEventListener('click', () => {
+  if (scrollContainer) {
+    scrollContainer.scrollLeft -= 100; // Adjust scroll amount as needed
+    updateChevrons();
+  }
+});
+
+scrollRightBtn?.addEventListener('click', () => {
+  if (scrollContainer) {
+    scrollContainer.scrollLeft += 100; // Adjust scroll amount as needed
+    updateChevrons();
+  }
+});
+
+const updateChevrons = () => {
+  const isScrollable = scrollContent && scrollContent.scrollWidth > (scrollContainer?.clientWidth || 0);
+  if (scrollLeftBtn && scrollRightBtn) {
+    scrollLeftBtn.disabled = !scrollContainer || scrollContainer.scrollLeft === 0;
+    scrollRightBtn.disabled = !isScrollable || (scrollContainer?.scrollLeft || 0) === (scrollContent?.scrollWidth - (scrollContainer?.clientWidth || 0));
+  }
+};
+
+scrollContainer?.addEventListener('scroll', updateChevrons);
+window.addEventListener('resize', updateChevrons);
+updateChevrons();
+
 </script>
